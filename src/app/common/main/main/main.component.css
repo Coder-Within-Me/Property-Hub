@@ -1,0 +1,15 @@
+mat-toolbar{
+    background-color: #f0f8c3;
+}
+
+.div-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .title {
+    font-family: Times New Roman, Times, serif;
+  }
+
+  a[mat-button]:hover{
+    color: rgb(78, 110, 253);
+  }

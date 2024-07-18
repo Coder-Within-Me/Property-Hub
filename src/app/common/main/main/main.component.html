@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <span class="title">Property Hub</span>
+    <span class="div-spacer"></span>
+    <a mat-button routerLink="propertylisting">Property Listings</a>
+    <a mat-button routerLink="registerproperty">Register property</a>
+    <button mat-icon-button routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

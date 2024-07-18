@@ -1,0 +1,90 @@
+<div class="table-container">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort class="full-width-table">
+  
+        <!-- Owner's Name Column -->
+        <ng-container matColumnDef="ownerName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Owner's Name</th>
+          <td mat-cell *matCellDef="let element">{{element.ownerName}}</td>
+        </ng-container>
+  
+        <!-- Contact Column -->
+        <ng-container matColumnDef="contact">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Contact</th>
+          <td mat-cell *matCellDef="let element">{{element.contact}}</td>
+        </ng-container>
+  
+        <!-- State Column -->
+        <ng-container matColumnDef="state">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+          <td mat-cell *matCellDef="let element">{{element.state}}</td>
+        </ng-container>
+  
+        <!-- City Column -->
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+          <td mat-cell *matCellDef="let element">{{element.city}}</td>
+        </ng-container>
+  
+        <!-- Area Column -->
+        <ng-container matColumnDef="area">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Area</th>
+          <td mat-cell *matCellDef="let element">{{element.area}}</td>
+        </ng-container>
+  
+        <!-- Property Type Column -->
+        <ng-container matColumnDef="propertyType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Property Type</th>
+          <td mat-cell *matCellDef="let element">{{element.propertyType}}</td>
+        </ng-container>
+  
+        <!-- BHK Type Column -->
+        <ng-container matColumnDef="bhkType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>BHK Type</th>
+          <td mat-cell *matCellDef="let element">{{element.bhkType}}</td>
+        </ng-container>
+  
+        <!-- Area (in sqft) Column -->
+        <ng-container matColumnDef="areaSqft">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Area (in sqft)</th>
+          <td mat-cell *matCellDef="let element">{{element.areaSqft}}</td>
+        </ng-container>
+  
+        <!-- Transaction Type Column -->
+        <ng-container matColumnDef="transactionType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Transaction Type</th>
+          <td mat-cell *matCellDef="let element">{{element.transactionType}}</td>
+        </ng-container>
+  
+        <!-- Amount Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+          <td mat-cell *matCellDef="let element">{{element.amount}}</td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" [disabled]="element.status != null" (click)="buyOrRentProperty(element)">{{element.status == null ? 'Buy/Rent' : (element.status == 'Rented' ? 'Rented' : 'Sold')}}</button>
+          </td>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [disabled]="element.action" (click)="removeFromCart(element)">
+              <mat-icon style="color: red;">remove_shopping_cart</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <!-- Header and Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>

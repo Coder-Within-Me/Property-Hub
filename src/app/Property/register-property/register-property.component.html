@@ -1,0 +1,90 @@
+<div class="form-container">
+    <h1 class="title">Register Property</h1>
+<form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>Owner's Name</mat-label>
+            <input matInput formControlName="ownerName" required>
+            <mat-error *ngIf="propertyForm.get('ownerName')?.hasError('required')">Owner's name is required</mat-error>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Contact Number</mat-label>
+            <input matInput formControlName="contact" type="number" required>
+            <mat-error *ngIf="propertyForm.get('contact')?.hasError('required')">contact number is required</mat-error>
+          </mat-form-field>
+    </div>
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" required>
+            <mat-error *ngIf="propertyForm.get('state')?.hasError('required')">State is required</mat-error>
+          </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" required>
+            <mat-error *ngIf="propertyForm.get('city')?.hasError('required')">City is required</mat-error>
+          </mat-form-field>
+      
+    </div>
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>Area</mat-label>
+            <input matInput formControlName="area" required>
+            <mat-error *ngIf="propertyForm.get('area')?.hasError('required')">Area is required</mat-error>
+          </mat-form-field>
+    </div>
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>Property Type</mat-label>
+            <mat-select formControlName="propertyType" required>
+              <mat-option value="Bungalow">Bungalow</mat-option>
+              <mat-option value="Flat">Flat</mat-option>
+              <mat-option value="Shop">Shop</mat-option>
+              <mat-option value="Offices">Offices</mat-option>
+            </mat-select>
+            <mat-error *ngIf="propertyForm.get('propertyType')?.hasError('required')">Property type is required</mat-error>
+          </mat-form-field>
+      
+          <div *ngIf="propertyForm.get('propertyType')?.value === 'Flat' || propertyForm.get('propertyType')?.value === 'Bungalow'">
+            <mat-form-field>
+              <mat-label>BHK Type</mat-label>
+              <mat-select formControlName="bhkType">
+                <mat-option *ngFor="let bhk of bhkOptions" [value]="bhk">{{ bhk }}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="propertyForm.get('bhkType')?.hasError('required')">BHK type is required</mat-error>
+            </mat-form-field>
+            </div>
+    </div>
+
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>Area (in sqft)</mat-label>
+            <input matInput formControlName="areaSqft" type="number" required>
+            <mat-error *ngIf="propertyForm.get('areaSqft')?.hasError('required')">Area in sqft is required</mat-error>
+          </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Transaction Type</mat-label>
+          <mat-select formControlName="transactionType" required>
+            <mat-option value="Rent">Rent</mat-option>
+            <mat-option value="Sale">Sale</mat-option>
+          </mat-select>
+          <mat-error *ngIf="propertyForm.get('transactionType')?.hasError('required')">Transaction type is required</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="div-horz">
+        <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" type="number" required>
+            <mat-error *ngIf="propertyForm.get('amount')?.hasError('required')">Amount is required</mat-error>
+            <mat-error *ngIf="propertyForm.get('amount')?.hasError('min')">Amount must be a positive number</mat-error>
+          </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!propertyForm.valid">Submit</button>
+
+  </form>
+</div>
+  
