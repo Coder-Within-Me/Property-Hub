@@ -1,5 +1,5 @@
 export interface cart{
-    cartId? : number;
+    id? : number;
     customerId : string | null;
     propertyId : number;
 }

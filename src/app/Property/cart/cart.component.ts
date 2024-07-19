@@ -58,14 +58,17 @@ export class CartComponent {
   }
 
   removeFromCart(element : PropertyForm){
-    // const cart : cart = {
-    //   customerId:this.appConfigService.getUser(),
-    //   propertyId: element.id as number
-    // };
-    // this.cartService.deleteCart(cart.customerId,cart.propertyId).subscribe();
-    // this.getAllProperties();
-    //this.snackBar.open('Successfully removed from cart.','Ok',{ horizontalPosition : 'center', verticalPosition : 'top', duration : 3000});
-    this.snackBar.open('Remove from cart : yet to implement.','Ok',{ horizontalPosition : 'center', verticalPosition : 'top', duration : 3000});
+    this.cartService.getCartData().subscribe((carts : cart[]) => {
+      const id = carts.filter(x => x.customerId == this.appConfigService.getUser() && x.propertyId == element.id).map(x => x.id)[0];
+      if(!!id){
+        this.cartService.deleteCart(id).subscribe();
+        this.getAllProperties();
+        this.snackBar.open('Successfully removed from cart.','Ok',{ horizontalPosition : 'center', verticalPosition : 'top', duration : 3000});
+      }
+      else{
+        this.snackBar.open('Unable to remove from cart.','Ok',{ horizontalPosition : 'center', verticalPosition : 'top', duration : 3000});
+      }
+    });
   }
 
   buyOrRentProperty(element : PropertyForm){

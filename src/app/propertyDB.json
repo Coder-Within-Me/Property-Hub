@@ -12,8 +12,8 @@
       "areaSqft": 152,
       "transactionType": "Sale",
       "amount": 5000,
-      "status": null,
-      "action": false
+      "status": "Rented",
+      "action": true
     },
     {
       "id": "bb93",
@@ -41,7 +41,8 @@
       "areaSqft": 1336,
       "transactionType": "Sale",
       "amount": 78000,
-      "status": null
+      "status": "Sold",
+      "action": false
     },
     {
       "id": "9ada",
@@ -85,7 +86,7 @@
       "areaSqft": 1080,
       "transactionType": "Rent",
       "amount": 2500,
-      "status": null,
+      "status": "Rented",
       "action": false
     },
     {
@@ -143,39 +144,14 @@
   ],
   "cart": [
     {
-      "id": "0850",
-      "customerId": "576c",
-      "propertyId": "bb93"
-    },
-    {
       "id": "8faf",
       "customerId": "576c",
-      "propertyId": "9ada"
-    },
-    {
-      "id": "bc83",
-      "customerId": "791f",
-      "propertyId": "fab3"
-    },
-    {
-      "id": "b6d0",
-      "customerId": "791f",
       "propertyId": "9ada"
     },
     {
       "id": "5786",
       "customerId": "576c",
       "propertyId": "74ab"
-    },
-    {
-      "id": "a853",
-      "customerId": "576c",
-      "propertyId": "f3fb"
-    },
-    {
-      "id": "0bf1",
-      "customerId": "576c",
-      "propertyId": "e2d9"
     },
     {
       "id": "916f",
@@ -206,6 +182,16 @@
       "id": "33de",
       "customerId": "0ddb",
       "propertyId": "74ab"
+    },
+    {
+      "id": "97fa",
+      "customerId": "791f",
+      "propertyId": "74ab"
+    },
+    {
+      "id": "5139",
+      "customerId": "791f",
+      "propertyId": "fab3"
     }
   ]
 }

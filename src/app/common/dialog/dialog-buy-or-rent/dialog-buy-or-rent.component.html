@@ -9,5 +9,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onConfirm()">Confirm</button>
+  <button mat-button (click)="onConfirm()" [disabled]="!selected">Confirm</button>
 </div>

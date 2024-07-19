@@ -20,7 +20,7 @@ export class CartService {
     return this.http.post<cart>(this.apiUrl, cart);
   }
 
-  deleteCart(customerId: string | null,propertyId : number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}` + '?customerId=' + `${customerId}` + '&propertyId=' + `${customerId}`);
+  deleteCart(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

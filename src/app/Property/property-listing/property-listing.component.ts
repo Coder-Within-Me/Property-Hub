@@ -136,6 +136,7 @@ export class PropertyListingComponent implements OnInit{
         this.propertyService.updateProperty(property.id ?? 0,property).subscribe(() => {
           this.getAllProperties();
           this.snackBar.open(result == 'Buy' ? 'Bought Successfully.' : 'Rented Successfully.','Ok',{ horizontalPosition : 'center', verticalPosition : 'top', duration : 3000});
+          this.clearFilters();
       });
       }
     });
