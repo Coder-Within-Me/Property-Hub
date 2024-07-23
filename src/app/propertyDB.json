@@ -56,7 +56,7 @@
       "areaSqft": 1235,
       "transactionType": "Rent",
       "amount": 3000,
-      "status": null,
+      "status": "Rented",
       "action": true
     },
     {
@@ -103,6 +103,19 @@
       "amount": 25000,
       "action": false,
       "status": "Rented"
+    },
+    {
+      "id": "fb1e",
+      "ownerName": "adfdsfs",
+      "contact": 5698653,
+      "state": "ABC",
+      "city": "fdhgj",
+      "area": "zvxcczc",
+      "propertyType": "Flat",
+      "bhkType": "4 BHK",
+      "areaSqft": 789,
+      "transactionType": "Sale",
+      "amount": 741
     }
   ],
   "users": [
@@ -140,6 +153,13 @@
       "email": "test@gmail.com",
       "password": "Test@999",
       "confirmPassword": "Test@999"
+    },
+    {
+      "id": "9083",
+      "userName": "Krushna123",
+      "email": "Krushna123@gmail.com",
+      "password": "Krushna@123",
+      "confirmPassword": "Krushna@123"
     }
   ],
   "cart": [
@@ -192,6 +212,11 @@
       "id": "5139",
       "customerId": "791f",
       "propertyId": "fab3"
+    },
+    {
+      "id": "6b49",
+      "customerId": "9083",
+      "propertyId": "9ada"
     }
   ]
 }

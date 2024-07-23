@@ -125,6 +125,9 @@ export class PropertyListingComponent implements OnInit{
   clearFilters(){
     this.filterForm.reset();
     this.dataSource.data = this.propertiesData();
+    this.states.set(this.getUniqueArray(this.propertiesData().map(p => p.state)));
+        this.cities.set(this.getUniqueArray(this.propertiesData().map(p => p.city)));
+        this.areas.set(this.getUniqueArray(this.propertiesData().map(p => p.area)));
   }
 
   buyOrRentProperty(element : PropertyForm){
