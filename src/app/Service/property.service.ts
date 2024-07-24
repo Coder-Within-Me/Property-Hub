@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PropertyForm } from '../model/PropertyForm';
+import { environment } from '../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertyService {
 
-  private apiUrl = 'http://localhost:3000/properties';
+  private apiUrl = environment.baseUrl + '/properties';
 
   constructor(private http: HttpClient) {}
 
